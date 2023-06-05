@@ -13,7 +13,7 @@ def net_metrics(relative_path, mode, file, opt=''):
     # create directory if it does not exist
     Path(relative_path).mkdir(parents=True, exist_ok=True)
 
-    ## Função para exportar dados .csv
+    ## function to export data .csv
     def export_data(g, data, stat):
         # Saving results to file
         file_out = open(relative_path + stat + '.csv', 'w')
@@ -21,7 +21,7 @@ def net_metrics(relative_path, mode, file, opt=''):
             file_out.write(str(g.vs[i]['NOMEMUN']) + ';' + str(int(g.vs[i]['geocode'])) + ';' + str(data[i]) + '\n')
         file_out.close()
 
-    ## Função calcula heterogeneidade
+    ## function calculates heterogeneity
     def heterogeneity(g):
         degrees = g.degree(mode=mode)
         acc = 0
@@ -32,7 +32,7 @@ def net_metrics(relative_path, mode, file, opt=''):
         return het
 
     # reading the network from file
-    g = ig.Graph.Read_GraphML(mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\input_data\\networks\\' + file)
+    g = ig.Graph.Read_GraphML(mydir + '\\IBGE_2016_mobilidade\\main_code\\input_data\\networks\\' + file)
     # g.to_undirected()
 
     print('  Density  ')

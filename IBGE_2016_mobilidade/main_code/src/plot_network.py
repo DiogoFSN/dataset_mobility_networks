@@ -6,15 +6,15 @@ import numpy as np
 import pandas as pd
 
 mydir = os.getcwd()
-files = os.listdir(mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\input_data\\networks')
+files = os.listdir(mydir + '\\IBGE_2016_mobilidade\\main_code\\input_data\\networks')
 #files.remove('.DS_Store')
 
 
 for file in files:
     # reading the network from file
-    g = ig.Graph.Read_GraphML(mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\input_data\\networks\\' + file)
+    g = ig.Graph.Read_GraphML(mydir + '\\IBGE_2016_mobilidade\\main_code\\input_data\\networks\\' + file)
 
-    ## Elementos minimos e maximos das coordenadas
+    ## minimum and maximum elements of coordinates
     min_x = np.min(g.vs["LONG"])
     max_x = np.max(g.vs["LONG"])
     min_y = np.min(g.vs["LATI"])
@@ -27,23 +27,23 @@ for file in files:
     height = dim_y * scale
     width = height = 1000
 
-    ## Métricas a serem medidas
+    ## metrics to be measured
     metrics = ['degree', 'betweenness', 'strength', 'betweenness_weight',
                'closeness_weight']  # , 'vulnerability_weight'
 
-    ## Numero de nós
+    ## number of nodes
     g.vcount()
 
-    ## Numero de arestas
+    ## number of edges
     g.ecount()
 
-    ## Pastas das metricas
-    relative_path_in = mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\metrics\\' + file[:-8] + '\\in\\'
-    relative_path_out = mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\metrics\\' + file[:-8] + '\\out\\'
-    relative_path_time = mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\metrics\\' + file[:-8] + '\\time\\'
-    relative_path_cost = mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\metrics\\' + file[:-8] + '\\cost\\'
+    ## metrics folders
+    relative_path_in = mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\metrics\\' + file[:-8] + '\\in\\'
+    relative_path_out = mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\metrics\\' + file[:-8] + '\\out\\'
+    relative_path_time = mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\metrics\\' + file[:-8] + '\\time\\'
+    relative_path_cost = mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\metrics\\' + file[:-8] + '\\cost\\'
 
-    ## Função para gerar as metricas
+    ## function to generate the metrics
     net_metrics(relative_path_in, 'in', file)
     net_metrics(relative_path_out, 'out', file)
     net_metrics(relative_path_time, 'all', file, 'time')
@@ -54,7 +54,7 @@ for file in files:
         for metric in metrics:
             # Metrics
             print('linha 56')
-            df = pd.read_csv(mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\metrics\\' + file[:-8] + '\\' + j + '\\' + metric + '.csv', delimiter=';',
+            df = pd.read_csv(mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\metrics\\' + file[:-8] + '\\' + j + '\\' + metric + '.csv', delimiter=';',
                              header=None, encoding="latin1")
             df.columns = ['id', 'city_code', 'metric']
             print(df['metric'])
@@ -104,4 +104,4 @@ for file in files:
                 "edge_arrow_size": 0.2
             }
 
-            ig.plot(g, mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\metrics\\' + file[:-8] + '\\' + j + '\\' + metric + '.png', **visual_style)
+            ig.plot(g, mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\metrics\\' + file[:-8] + '\\' + j + '\\' + metric + '.png', **visual_style)

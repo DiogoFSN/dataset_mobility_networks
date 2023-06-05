@@ -2,9 +2,9 @@ import os
 
 mydir = os.getcwd()
 print('mydir: ', mydir)
-files = os.listdir(mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\input_data\\networks')
+files = os.listdir(mydir + '\\IBGE_2016_mobilidade\\main_code\\input_data\\networks')
 if files.__len__() == 0:
-    os.system('python \\IBGE_2016_mobilidade_covid-masters\\main_code\\input_data\\create_networks.py')
+    os.system('python \\IBGE_2016_mobilidade\\main_code\\input_data\\create_networks.py')
 files.sort()
 
 # mydir = os.chdir('src/metrics/')

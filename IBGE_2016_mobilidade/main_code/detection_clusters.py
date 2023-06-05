@@ -5,15 +5,15 @@ from pathlib import Path
 import pandas as pd
 
 mydir = os.getcwd()
-files = os.listdir(mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\input_data\\networks')
+files = os.listdir(mydir + '\\IBGE_2016_mobilidade\\main_code\\input_data\\networks')
 files.sort(reverse=True)
 #files.remove('.DS_Store')
 
 for file in files:
     # reading the network from file
-    g = ig.Graph.Read_GraphML(mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\input_data\\networks\\' + file)
+    g = ig.Graph.Read_GraphML(mydir + '\\IBGE_2016_mobilidade\\main_code\\input_data\\networks\\' + file)
 
-    ## Elementos minimos e maximos das coordenadas
+    ## minimum and maximum elements of coordinates
     min_x = np.min(g.vs["LONG"])
     max_x = np.max(g.vs["LONG"])
     min_y = np.min(g.vs["LATI"])
@@ -26,23 +26,23 @@ for file in files:
     height = dim_y * scale
     width = height = 1000
 
-    ## Detalhes da rede
+    ## network details
     g.summary()
 
-    ## Numero de nós
+    ## number of nodes
     g.vcount()
 
-    ## Numero de arestas
+    ## number of edges
     g.ecount()
 
-    ## Atributos dos nós
+    ## node attributes
     g.vertex_attributes()
 
-    ## Atributos das arestas
+    ## edge attributes
     g.edge_attributes()
 
-    ## Pastas das metricas
-    relative_path = mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\clusters\\' + file[:-8]
+    ## metrics folder
+    relative_path = mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\clusters\\' + file[:-8]
 
     entrada = ['in', 'out', 'time', 'cost']
 
@@ -110,9 +110,9 @@ for file in files:
             "edge_arrow_size": 0.2
         }
 
-        Path(mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\').mkdir(parents=True, exist_ok=True)
-        ig.plot(infomap, mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\' + 'infomap' + '.png', **visual_style)
-        ig.plot(walktrap, mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\' + 'walktrap' + '.png', **visual_style)
-        # ig.plot(GirvanNewman, mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\' + 'GirvanNewman' + '.png',
+        Path(mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\').mkdir(parents=True, exist_ok=True)
+        ig.plot(infomap, mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\' + 'infomap' + '.png', **visual_style)
+        ig.plot(walktrap, mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\' + 'walktrap' + '.png', **visual_style)
+        # ig.plot(GirvanNewman, mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\' + 'GirvanNewman' + '.png',
         #         **visual_style)
-        # ig.plot(louvain, mydir + '\\IBGE_2016_mobilidade_covid-masters\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\' + 'louvain' + '.png', **visual_style)
+        # ig.plot(louvain, mydir + '\\IBGE_2016_mobilidade\\main_code\\results\\clusters\\' + file[:-8] + '\\' + j + '\\' + 'louvain' + '.png', **visual_style)
