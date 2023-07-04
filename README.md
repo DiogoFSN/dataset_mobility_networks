@@ -19,6 +19,12 @@ Data on intermunicipal travel networks of Mexico during the COVID-19 pandemic ar
 
 Finally, nine plotted dates were made available to represent different important events during the evolution of the pandemic in Mexico, as well as explanations of the necessary changes for each plot.
 
+# Origin/Destination survey with mobile phone data for the metropolitan region of Belo Horizonte (RMBH)
+
+Data on the origin/destination survey with mobile phone data for the metropolitan region of Belo Horizonte (RMBH) are available at [this link](http://www.agenciarmbh.mg.gov.br/pesquisa-od/). Containing a more complete explanation of all the research carried out and its attachments, where 2 periods of 20 days were researched, the first period was in November 2019 (from the 1st to the 20th) and the second period was from the 1st to the 20th of May of 2021, covering 393 zones in the metropolitan region of Belo Horizonte (RMBH) using mobile phone data to obtain the origin destination (OD) matrices, covering the cities of Baldim, Belo Horizonte, Betim, Brumadinho, Caeté, Capim Branco, Confins, Contagem, Esmeraldas, Florestal, Ibirité, Igarapé, Itaguara, Itatiaiuçu, Jaboticatubas, Juatuba, Lagoa Santa, Mário Campos, Mateus Leme, Matozinhos, Nova Lima, Nova União, Pedro Leopoldo, Raposos, Ribeirão das Neves, Rio Acima , Rio Manso, Sabará, Santa Luzia, São Joaquim de Bicas, São José da Lapa, Sarzedo, Taquaraçu de Minas and Vespasiano. The matrix expresses the daily flow of trips among all origin-destination pairs classified according to their reason, period of travel and socio-demographic profile of travelers.
+
+Finally, this research did not generate any graph of the trips made, but in the research results several metrics used in the research can be found: reason for the trip, period of realization and sociodemographic profile of the travelers that can be used in the future to generate graphs, these graphs can be contact network and mobility network.
+
 # Research Origin and Household Destination of the Metropolitan Region of Salvador (RMS) 2012
 
 Data on the Survey Origin and Household Destination of the Metropolitan Region of Salvador (RMS) 2012 are available at [this link](http://www.infraestrutura.ba.gov.br/modules/conteudo/conteudo.php?conteudo=16). Containing a more complete explanation of all the research carried out, where this research aimed to collect updated information about the displacements made by the population on a typical working day. The Metropolitan Region of Salvador concentrates around 3.88 million people, spread over an area of approximately 4,385 km².
@@ -28,3 +34,7 @@ An important characteristic of the Origin and Destination Survey is that it allo
 - The transport system, urban equipment, physical barriers and empty areas were also considered in the zoning.
 
 Finally, in this research, no graph of the trips made was generated, but in the research results several metrics used in the research can be found that can be used in the future to generate the graph.
+
+# Search Origin Destination metropolitan region of Curitiba - PR
+
+Data on the origin destination survey carried out in the metropolitan region of Curitiba - PR are available at [this link](https://www.amep.pr.gov.br/Pagina/Pesquisa-origemdestino). Containing a more complete explanation of the entire survey and its respective annexes, the survey covers all integrated and non-integrated metropolitan lines, it aimed to carry out 128,000 questionnaires from people who disembark at bus terminals and at 225 bus stops from Curitiba, used for displacement in the 14 municipalities that use the integrated and non-integrated metropolitan lines, which were represented by the district/municipality of origin or destination and time of application
